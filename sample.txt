@@ -1,3 +1,14 @@
-This is to check if our git installation is working correctly
-
-check again
+Go to this GitHub repository.
+Click Fork and proceed with the steps.
+Now the repository would have been created under your account.
+Clone this repository in your system. (Check online on how to clone repo)
+Open this repository in VSCode.
+Create a sample.txt file inside the repo (This is to check if our git installation is working correctly)
+Open the terminal inside vscode, and type “git add .” and press enter.
+Type “git commit -m ‘Test commit’” and press enter.
+Type “git push”
+It should ask you for your credentials like username and password. For the username, enter your github ID/github email ID and for password, follow these steps.
+Head over to https://github.com/settings/tokens and Generate new token (classic). Give the name as “crio-take-home”, choose expiration as “No expiration” and click the entire “repo” checkmark and create a token.
+You will now see a token on the screen. Copy and paste this in a safe place like notepad. Go back to vscode and paste this token in the password field.
+Check if the file got pushed to your repository. You can visit the repo on your profile in the browser and check.
+Congratulations! Your git setup is complete
