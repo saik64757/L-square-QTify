@@ -5,7 +5,7 @@ function Logo() {
     <img
       src={require("../../Assetes/Logo qtify.png")}
       alt="logo"
-      width={"67px"}
+      height={"67px"}
     />
   );
 }
