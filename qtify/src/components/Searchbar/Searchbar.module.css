@@ -1,25 +1,26 @@
-.Serchbar {
-  width: 568px;
-  height: 48px;
-  background: var(--color-white);
-  border-radius: 8px;
-  border: 1px solid #121212;
+.Serchwrap {
+  display: flex;
 }
 
 .serchinput {
-  width: 500px;
-  height: 46px;
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  letter-spacing: 0.2px;
+  width: 502px;
+  height: 48px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-black);
+  border-radius: 8px 0px 0px 8px;
+  padding: 0px 0px 0px 20px;
 }
 
 .serchButton {
-  width: 56px;
-  height: 46px;
-  border-radius: 8px;
-  border: 1px solid #121212;
+  width: 66px;
+  height: 48px;
+  background-color: var(--color-white);
+  cursor: pointer;
+  border-radius: 0px 8px 8px 0px;
+  border: 1px solid var(--color-black);
+}
+
+.serchButton > img {
+  width: 25px;
+  margin-left: 14px;
 }
