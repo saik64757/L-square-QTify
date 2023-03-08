@@ -6,7 +6,7 @@ function Card() {
     <>
       <div className={styles.CardWrapper}>
         <div className={styles.cardContent}>
-          <img src={require("../../Assetes/Cardimage.png")} alt="card image" />
+          <img src={require("../../Assetes/Cardimage.png")} alt="" />
           <p>100M Follows</p>
         </div>
         <p>New BollyWood</p>
