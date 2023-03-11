@@ -1,0 +1,18 @@
+.SectionWrapper {
+  margin: 0px 31px;
+}
+
+.SectionsongsWrapper {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cards {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 23px;
+  column-gap: 41px;
+}
