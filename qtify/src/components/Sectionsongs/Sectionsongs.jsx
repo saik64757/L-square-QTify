@@ -26,7 +26,7 @@ function Sectionsongs(props) {
         </div>
         <div onClick={() => setisCollapsed((PrevState) => !PrevState)}>
           <h3 style={{ color: "#34c94b", cursor: "pointer" }}>
-            {isCollapsed ? "Collapsed" : "Show All"}
+            {isCollapsed ? "Collapse" : "Show All"}
           </h3>
         </div>
       </div>
