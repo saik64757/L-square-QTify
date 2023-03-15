@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "./Card.module.css";
 
-function Card({ Album }) {
+function Card({ data }) {
   return (
     <div className={styles.CardWrapper}>
       <div className={styles.cardContent}>
-        <img src={Album.image} alt="" />
-        <p>{Album.follows} Follows</p>
+        <img src={data.image} alt="" />
+        <p>{data.follows} Follows</p>
       </div>
-      <p>{Album.title}</p>
+      <p>{data.title}</p>
     </div>
   );
 }

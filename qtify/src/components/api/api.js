@@ -14,3 +14,12 @@ export const fetchApitoAlbums = async () => {
     throw error;
   }
 };
+
+export const fetchApinewAlbums = async () => {
+  try {
+    let TopAlbums = await axios.get(`${BackendUrl}/albums/new`);
+    return TopAlbums.data;
+  } catch (error) {
+    throw error;
+  }
+};
