@@ -1,6 +1,4 @@
 import React from "react";
-import { register } from "swiper/element/bundle";
-import styles from "./carousel.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import CarouselLeftNav from "../Sectionsongs/CarouselLeftNav/CarouselLeftNav";
