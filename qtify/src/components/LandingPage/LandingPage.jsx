@@ -3,6 +3,7 @@ import HeroSection from "../HeroSection/HeroSection";
 import Sectionsongs from "../Sectionsongs/Sectionsongs";
 import { fetchApinewAlbums, fetchApitoAlbums } from "../api/api";
 import SongsbyGenere from "../SongsbyGenere/SongsbyGenere";
+import FaqSection from "../FaqSection/FaqSection";
 
 function LandingPage() {
   return (
@@ -12,9 +13,10 @@ function LandingPage() {
       <div>
         <Sectionsongs title={"Top Albums"} data={fetchApitoAlbums} />
         <Sectionsongs title={"New Albums"} data={fetchApinewAlbums} />
-        <hr style={{ border: "2px solid  var(--color-Primary)" }} />
+        <hr style={{ border: "1px solid  var(--color-Primary)" }} />
       </div>
       <SongsbyGenere />
+      <FaqSection />
     </>
   );
 }
