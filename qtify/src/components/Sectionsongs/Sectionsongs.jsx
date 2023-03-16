@@ -19,30 +19,32 @@ function Sectionsongs(props) {
   }, []);
 
   return (
-    <div className={styles.SectionWrapper}>
-      <div className={styles.SectionsongsWrapper}>
-        <div>
-          <h3>{props.title}</h3>
+    <>
+      <div className={styles.SectionWrapper}>
+        <div className={styles.SectionsongsWrapper}>
+          <div>
+            <h3>{props.title}</h3>
+          </div>
+          <div onClick={() => setisCollapsed((PrevState) => !PrevState)}>
+            <h3 style={{ color: "#34c94b", cursor: "pointer" }}>
+              {isCollapsed ? "Collapse" : "Show All"}
+            </h3>
+          </div>
         </div>
-        <div onClick={() => setisCollapsed((PrevState) => !PrevState)}>
-          <h3 style={{ color: "#34c94b", cursor: "pointer" }}>
-            {isCollapsed ? "Collapse" : "Show All"}
-          </h3>
-        </div>
+        {isCollapsed ? (
+          <div className={styles.cards}>
+            {topSongs.map((data) => (
+              <Card data={data} key={data.id} />
+            ))}
+          </div>
+        ) : (
+          <Carousel
+            data={topSongs}
+            renderCards={(data) => <Card data={data} key={data.id} />}
+          />
+        )}
       </div>
-      {isCollapsed ? (
-        <div className={styles.cards}>
-          {topSongs.map((data) => (
-            <Card data={data} key={data.id} />
-          ))}
-        </div>
-      ) : (
-        <Carousel
-          data={topSongs}
-          renderCards={(data) => <Card data={data} key={data.id} />}
-        />
-      )}
-    </div>
+    </>
   );
 }
 

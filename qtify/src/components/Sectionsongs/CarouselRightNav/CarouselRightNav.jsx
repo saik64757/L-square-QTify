@@ -11,7 +11,7 @@ function CarouselRightNav() {
       style={{
         position: "absolute",
         top: "40%",
-        right: "0",
+        right: "5px",
         zIndex: 10,
         transform: "translateY(-50%)",
       }}

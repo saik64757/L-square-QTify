@@ -4,14 +4,20 @@ import HeroSection from "../HeroSection/HeroSection";
 import axios from "axios";
 import Sectionsongs from "../Sectionsongs/Sectionsongs";
 import { fetchApinewAlbums, fetchApitoAlbums } from "../api/api";
+import SongsbyGenere from "../SongsbyGenere/SongsbyGenere";
+import { red } from "@mui/material/colors";
 
 function LandingPage() {
   return (
     <>
       <Navbar />
       <HeroSection />
-      <Sectionsongs title={"Top Albums"} data={fetchApitoAlbums} />
-      <Sectionsongs title={"New Albums"} data={fetchApinewAlbums} />
+      <div>
+        <Sectionsongs title={"Top Albums"} data={fetchApitoAlbums} />
+        <Sectionsongs title={"New Albums"} data={fetchApinewAlbums} />
+        <hr style={{ border: "1px solid  var(--color-Primary)" }} />
+      </div>
+      <SongsbyGenere />
     </>
   );
 }

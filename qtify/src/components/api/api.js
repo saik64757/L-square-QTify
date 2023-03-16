@@ -23,3 +23,21 @@ export const fetchApinewAlbums = async () => {
     throw error;
   }
 };
+
+export const fetchgenres = async () => {
+  try {
+    let TopAlbums = await axios.get(`${BackendUrl}/genres`);
+    return TopAlbums.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const fetchAllsongs = async () => {
+  try {
+    let TopAlbums = await axios.get(`${BackendUrl}/songs`);
+    return TopAlbums.data;
+  } catch (error) {
+    throw error;
+  }
+};

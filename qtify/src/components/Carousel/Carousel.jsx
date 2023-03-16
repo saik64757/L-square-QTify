@@ -17,7 +17,9 @@ function Carousel({ data, renderCards }) {
     >
       <CarouselLeftNav />
       {data.map((ele) => (
-        <SwiperSlide key={ele.id}>{renderCards(ele)}</SwiperSlide>
+        <SwiperSlide style={{ marginLeft: "20px" }} key={ele.id}>
+          {renderCards(ele)}
+        </SwiperSlide>
       ))}
       <CarouselRightNav />
     </Swiper>
