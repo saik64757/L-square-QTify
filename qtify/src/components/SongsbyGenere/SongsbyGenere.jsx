@@ -77,7 +77,13 @@ function SongsbyGenere() {
       try {
         let data = await fetchgenres();
         let songs = await fetchAllsongs();
-        setallGenere(data.data);
+        setallGenere([
+          {
+            key: "all",
+            label: "All",
+          },
+          ...data.data,
+        ]);
         setallSongs(songs);
       } catch (error) {
         return error;
@@ -95,43 +101,24 @@ function SongsbyGenere() {
             onChange={handleChange}
             aria-label="styled tabs example"
           >
-            <StyledTab label="All" />
             {allGenere.map((data) => (
               <StyledTab label={data.label} key={data.key} />
             ))}
           </StyledTabs>
-          {/* <Box sx={{ p: 3 }} /> */}
         </Box>
-        <TabPanel value={value} index={0}>
-          <Carousel
-            data={allSongs}
-            renderCards={(ele) => <Card data={ele} />}
-          />
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          <Carousel
-            data={allSongs.filter((ele) => ele.genre.label === "Jazz")}
-            renderCards={(ele) => <Card data={ele} />}
-          />
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-          <Carousel
-            data={allSongs.filter((ele) => ele.genre.label === "Rock")}
-            renderCards={(ele) => <Card data={ele} />}
-          />
-        </TabPanel>
-        <TabPanel value={value} index={3}>
-          <Carousel
-            data={allSongs.filter((ele) => ele.genre.label === "Pop")}
-            renderCards={(ele) => <Card data={ele} />}
-          />
-        </TabPanel>
-        <TabPanel value={value} index={4}>
-          <Carousel
-            data={allSongs.filter((ele) => ele.genre.label === "Blues")}
-            renderCards={(ele) => <Card data={ele} />}
-          />
-        </TabPanel>
+        {allGenere.map((ele) => (
+          <TabPanel value={value} index={allGenere.indexOf(ele)} key={ele.key}>
+            <Carousel
+              data={allSongs.filter((songs) => {
+                if (ele.label === "All") {
+                  return songs.genre.label;
+                }
+                return songs.genre.label === ele.label;
+              })}
+              renderCards={(ele) => <Card data={ele} />}
+            />
+          </TabPanel>
+        ))}
       </Box>
     </div>
   );
