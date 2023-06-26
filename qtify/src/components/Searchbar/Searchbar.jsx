@@ -10,7 +10,7 @@ function Searchbar() {
           placeholder="Search a song of your choice"
           className={styles.serchinput}
         />
-        <button className={styles.serchButton}>
+        <button className={styles.serchButton} type="submit">
           <img src={require("../../Assetes/Searchicon.png")} alt="" />
         </button>
       </div>

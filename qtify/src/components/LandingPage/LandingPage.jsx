@@ -4,6 +4,7 @@ import Sectionsongs from "../Sectionsongs/Sectionsongs";
 import { fetchApinewAlbums, fetchApitoAlbums } from "../api/api";
 import SongsbyGenere from "../SongsbyGenere/SongsbyGenere";
 import FaqSection from "../FaqSection/FaqSection";
+import SongController from "../SongController/SongController";
 
 function LandingPage() {
   return (
@@ -17,6 +18,7 @@ function LandingPage() {
       </div>
       <SongsbyGenere />
       <FaqSection />
+      <SongController />
     </>
   );
 }
