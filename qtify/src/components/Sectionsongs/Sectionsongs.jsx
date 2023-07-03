@@ -4,19 +4,7 @@ import Card from "../Card/Card";
 import Carousel from "../Carousel/Carousel";
 
 function Sectionsongs(props) {
-  const [topSongs, settopSongs] = useState([]);
   const [isCollapsed, setisCollapsed] = useState(false);
-
-  useEffect(() => {
-    (async () => {
-      try {
-        let data = await props.data();
-        settopSongs(data);
-      } catch (error) {
-        return error;
-      }
-    })();
-  }, [props]);
 
   return (
     <>
@@ -33,13 +21,13 @@ function Sectionsongs(props) {
         </div>
         {isCollapsed ? (
           <div className={styles.cards}>
-            {topSongs.map((data) => (
+            {props.data.map((data) => (
               <Card data={data} key={data.id} />
             ))}
           </div>
         ) : (
           <Carousel
-            data={topSongs}
+            data={props.data}
             renderCards={(data) => <Card data={data} key={data.id} />}
           />
         )}

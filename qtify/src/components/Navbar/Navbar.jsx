@@ -3,12 +3,16 @@ import Logo from "../Logo/Logo";
 import Searchbar from "../Searchbar/Searchbar";
 import styles from "./Navbar.module.css";
 import Button from "../Button/Button";
+import { Link } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ searchData }) {
   return (
     <div className={styles.navbar}>
-      <Logo />
-      <Searchbar />
+      <Link to={"/"}>
+        <Logo />
+      </Link>
+
+      <Searchbar searchData={searchData} />
       <Button />
     </div>
   );

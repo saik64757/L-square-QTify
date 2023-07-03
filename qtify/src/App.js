@@ -1,12 +1,39 @@
-import React from "react";
-import LandingPage from "./components/LandingPage/LandingPage";
+import React, { useEffect, useState } from "react";
 import { StyledEngineProvider } from "@mui/material/styles";
+import { Outlet } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
+import SongController from "./components/SongController/SongController";
+import {
+  fetchAllsongs,
+  fetchApinewAlbums,
+  fetchApitoAlbums,
+} from "./components/api/api";
 
 function App() {
+  const [data, setdata] = useState({});
+
+  const generateData = (key, source) => {
+    source().then((data) => {
+      setdata((prevData) => {
+        return { ...prevData, [key]: data };
+      });
+    });
+  };
+
+  useEffect(() => {
+    generateData("topAlbums", fetchApitoAlbums);
+    generateData("newAlbums", fetchApinewAlbums);
+    generateData("songs", fetchAllsongs);
+  }, []);
+
+  const { topAlbums = [], newAlbums = [], songs = [] } = data;
+
   return (
     <>
       <StyledEngineProvider injectFirst>
-        <LandingPage />
+        <Navbar searchData={[...topAlbums, ...newAlbums]} />
+        <Outlet context={{ data: { topAlbums, newAlbums, songs } }} />
+        <SongController />
       </StyledEngineProvider>
     </>
   );

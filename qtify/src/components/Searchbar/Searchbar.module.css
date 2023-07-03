@@ -4,16 +4,16 @@
 
 .serchinput {
   width: 502px;
-  height: 48px;
+  height: 56px;
   background-color: var(--color-white);
   border: 1px solid var(--color-black);
   border-radius: 8px 0px 0px 8px;
-  padding: 0px 0px 0px 20px;
+  /* padding: 0px 0px 0px 20px; */
 }
 
 .serchButton {
   width: 66px;
-  height: 48px;
+  height: 54.5px;
   background-color: var(--color-white);
   cursor: pointer;
   border-radius: 0px 8px 8px 0px;
@@ -23,4 +23,24 @@
 .serchButton > img {
   width: 25px;
   margin-left: 14px;
+}
+
+.buttonandinput {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.listWrapper {
+  padding: 5px;
+  margin: 5px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ListItem {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }

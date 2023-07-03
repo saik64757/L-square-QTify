@@ -1,6 +1,6 @@
 .feedBackButton {
   height: 47px;
-  width: 170px;
+  padding: 0px 10px;
   background-color: black;
   color: var(--color-Primary);
   border-radius: 12px;
