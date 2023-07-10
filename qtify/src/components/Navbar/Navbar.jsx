@@ -13,7 +13,11 @@ function Navbar({ searchData }) {
       </Link>
 
       <Searchbar searchData={searchData} />
-      <Button />
+      <Button
+        Message={"Give feedBack"}
+        buttonColor={"--color-Primary"}
+        backgroundColor={"black"}
+      />
     </div>
   );
 }

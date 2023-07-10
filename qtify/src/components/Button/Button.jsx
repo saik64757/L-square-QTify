@@ -1,8 +1,19 @@
 import React from "react";
-import styles from "./Button.module.css";
+import "./Button.css";
 
-function Button() {
-  return <button className={styles.feedBackButton}>Give Feedback</button>;
+function Button({ Message, buttonColor, backgroundColor, children }) {
+  return (
+    <button
+      className="feedBackButton"
+      style={{
+        color: `var(${buttonColor})`,
+        backgroundColor: `${backgroundColor}`,
+      }}
+    >
+      {children}
+      {Message}
+    </button>
+  );
 }
 
 export default Button;

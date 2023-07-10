@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import useAutocomplete from "@mui/base/useAutocomplete";
 import { styled } from "@mui/system";
 import styles from "./Searchbar.module.css";
@@ -50,11 +50,16 @@ function Searchbar({ searchData }) {
     options: searchData,
     getOptionLabel: (option) => option.title,
   });
+
   const navigate = useNavigate();
 
   function handleSubmit(event) {
     event.preventDefault();
-    navigate(`/album/${value.slug}`);
+    navigate(`/album/${value.slug}`, {
+      state: searchData.filter((album) => {
+        return album.slug === value.slug;
+      }),
+    });
   }
 
   return (

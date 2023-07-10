@@ -1,8 +1,6 @@
 .feedBackButton {
   height: 47px;
   padding: 0px 10px;
-  background-color: black;
-  color: var(--color-Primary);
   border-radius: 12px;
   border: 1px solid var(--color-Primary);
   font-family: "Poppins";

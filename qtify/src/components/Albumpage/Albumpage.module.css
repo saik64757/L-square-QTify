@@ -1,0 +1,52 @@
+.AlbummainSectionWrapper {
+  padding: 0 85px;
+}
+
+.albumImge {
+  width: 288px;
+  height: 329px;
+  border-radius: 20px;
+}
+.AlbumDetailsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+  margin: 38px 0;
+}
+
+.AlbuDetails {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.Listitems {
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.Listitems p {
+  margin: 10px 0;
+}
+
+.moreButton {
+  color: var(--color-Primary);
+}
+
+.detailButtons {
+  display: flex;
+  gap: 20px;
+}
+
+.detailButtons Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+.albumtext {
+  width: 500px;
+}
