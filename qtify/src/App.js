@@ -8,6 +8,7 @@ import {
   fetchApinewAlbums,
   fetchApitoAlbums,
 } from "./components/api/api";
+import FeedBackModal from "./components/FeedBackModal/FeedBackModal";
 
 function App() {
   const [data, setdata] = useState({});
@@ -31,7 +32,9 @@ function App() {
   return (
     <>
       <StyledEngineProvider injectFirst>
-        <Navbar searchData={[...topAlbums, ...newAlbums]} />
+        <Navbar searchData={[...topAlbums, ...newAlbums]}>
+          <FeedBackModal />
+        </Navbar>
         <Outlet context={{ data: { topAlbums, newAlbums, songs } }} />
         <SongController />
       </StyledEngineProvider>

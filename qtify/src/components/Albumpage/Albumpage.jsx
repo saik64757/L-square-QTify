@@ -12,7 +12,6 @@ const Albumpage = () => {
   const location = useLocation();
   const data = location.state;
   const [Album] = data;
-  console.log(Album);
 
   const navigate = useNavigate();
 
